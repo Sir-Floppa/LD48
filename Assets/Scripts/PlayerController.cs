@@ -21,11 +21,19 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Defines the direction of the player's movement
-        HorizontalInput = Input.GetAxisRaw("Horizontal");
-        VerticalInput = Input.GetAxisRaw("Vertical");
+        HorizontalInput = Input.GetAxis("Horizontal");
+        VerticalInput = Input.GetAxis("Vertical");
         movement.direction = new Vector3(HorizontalInput, VerticalInput, 0);
 
-
+        // Set the orb animation
+        if (Input.GetKey("mouse 0"))
+        {
+            anim.SetBool("Orb", true);
+        }
+        else
+        {
+            anim.SetBool("Orb", false);
+        }
     }
 
     private void FixedUpdate()
