@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public PlayerMovement movement;
     public GameObject ground;
+    public Animator anim;
 
     public float HorizontalInput;
     public float VerticalInput;
@@ -20,14 +21,26 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Defines the direction of the player's movement
-        HorizontalInput = Input.GetAxis("Horizontal");
-        VerticalInput = Input.GetAxis("Vertical");
+        HorizontalInput = Input.GetAxisRaw("Horizontal");
+        VerticalInput = Input.GetAxisRaw("Vertical");
         movement.direction = new Vector3(HorizontalInput, VerticalInput, 0);
+
+
     }
 
     private void FixedUpdate()
     {
         // w  a  l  k
         movement.Walk();
+        anim.SetFloat("HorizontalInput", HorizontalInput);
+        anim.SetFloat("VerticalInput", VerticalInput);
+        if (HorizontalInput != 0 || VerticalInput != 0)
+        {
+            anim.SetBool("Walking", true);
+        }
+        else
+        {
+            anim.SetBool("Walking", false);
+        }
     }
 }
