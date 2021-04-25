@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 
     public float HorizontalInput;
     public float VerticalInput;
+    public bool casting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -29,19 +30,24 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKey("mouse 0"))
         {
             anim.SetBool("Orb", true);
+            casting = true;
         }
         else
         {
             anim.SetBool("Orb", false);
+            casting = false;
         }
     }
 
     private void FixedUpdate()
     {
         // w  a  l  k
-        movement.Walk();
-        anim.SetFloat("HorizontalInput", HorizontalInput);
-        anim.SetFloat("VerticalInput", VerticalInput);
+        if (!casting)
+        {
+            movement.Walk();
+            anim.SetFloat("HorizontalInput", HorizontalInput);
+            anim.SetFloat("VerticalInput", VerticalInput);
+        }
         if (HorizontalInput != 0 || VerticalInput != 0)
         {
             anim.SetBool("Walking", true);

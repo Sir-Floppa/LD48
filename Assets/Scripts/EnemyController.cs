@@ -7,7 +7,11 @@ public class EnemyController : MonoBehaviour
     public GameObject target;
     public GameObject player;
     public Animator anim;
+
     public float speed = 2.25f;
+    public float timer = 0;
+    public float freezeTime = 2f;
+    public bool freeze;
 
     // Start is called before the first frame update
     void Start()
@@ -19,7 +23,7 @@ public class EnemyController : MonoBehaviour
     void Update()
     {
         // Follow the player and sets the moving animation for the enemy
-        if (target != null)
+        if (target != null && !freeze)
         {
             transform.Translate((target.transform.position - transform.position) * speed * Time.deltaTime);
         }
@@ -33,13 +37,30 @@ public class EnemyController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().sortingOrder = player.GetComponent<SpriteRenderer>().sortingOrder + 1;
         }
-    }
 
+        if (freeze)
+        {
+            timer += Time.deltaTime;
+            if (timer >= freezeTime)
+            {
+                freeze = false;
+                timer = 0;
+            }
+        }
+        
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
+        }
+
+        // Freeze with the light
+        if (collision.gameObject.tag == "Orb" && !freeze && timer < 3)
+        {
+            freeze = true;
         }
     }
 
