@@ -1,19 +1,7 @@
 fileFormatVersion: 2
-guid: 3c3ab6c9c3ee3cc489c2c4c6c1a7438e
+guid: adbd807993ad59a4aba76b4c272f9353
 TextureImporter:
-  internalIDToNameTable:
-  - first:
-      213: 4659112728790995596
-    second: S-walk player_0
-  - first:
-      213: 1996356805950468282
-    second: S-walk player_1
-  - first:
-      213: -1380897732520203614
-    second: S-walk player_2
-  - first:
-      213: 5659092065040703246
-    second: S-walk player_3
+  internalIDToNameTable: []
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -53,7 +41,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,91 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites:
-    - serializedVersion: 2
-      name: S-walk player_0
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 8
-        width: 15
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c829610875e78a040800000000000000
-      internalID: 4659112728790995596
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S-walk player_1
-      rect:
-        serializedVersion: 2
-        x: 49
-        y: 8
-        width: 15
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab07c9710fb74bb10800000000000000
-      internalID: 1996356805950468282
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S-walk player_2
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 8
-        width: 15
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2aaadfd14d016dce0800000000000000
-      internalID: -1380897732520203614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: S-walk player_3
-      rect:
-        serializedVersion: 2
-        x: 125
-        y: 8
-        width: 15
-        height: 34
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0f9bffff32298e40800000000000000
-      internalID: 5659092065040703246
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
+    sprites: []
     outline: []
     physicsShape: []
     bones: []
