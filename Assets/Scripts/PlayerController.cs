@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     public PlayerMovement movement;
     public GameObject ground;
     public Animator anim;
+    public AudioSource harp;
+    public AudioSource strings;
 
     public float HorizontalInput;
     public float VerticalInput;
@@ -36,6 +38,17 @@ public class PlayerController : MonoBehaviour
         {
             anim.SetBool("Orb", false);
             casting = false;
+        }
+        
+        if (Input.GetKeyDown("mouse 0"))
+        {
+            harp.Play();
+            strings.Play();
+        }
+        if (Input.GetKeyUp("mouse 0"))
+        {
+            strings.Stop();
+            strings.volume = 1f;
         }
     }
 
