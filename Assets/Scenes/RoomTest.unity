@@ -1381,31 +1381,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
-    - target: {fileID: 8650453636534767492, guid: 17e6712ffbeb8b94e8be1ee449d050da,
-        type: 3}
-      propertyPath: m_FontData.m_FontSize
-      value: 37
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650453636534767493, guid: 17e6712ffbeb8b94e8be1ee449d050da,
-        type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 408.2332
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650453636534767493, guid: 17e6712ffbeb8b94e8be1ee449d050da,
-        type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 135.8511
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650453636534767493, guid: 17e6712ffbeb8b94e8be1ee449d050da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -189
-      objectReference: {fileID: 0}
-    - target: {fileID: 8650453636534767493, guid: 17e6712ffbeb8b94e8be1ee449d050da,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 151
-      objectReference: {fileID: 0}
     - target: {fileID: 8650453636534767494, guid: 17e6712ffbeb8b94e8be1ee449d050da,
         type: 3}
       propertyPath: player
