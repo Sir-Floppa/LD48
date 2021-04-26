@@ -810,10 +810,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 630316554, guid: c84ca3e306f94a640909e4b596349302, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2577569618757147158, guid: c84ca3e306f94a640909e4b596349302,
         type: 3}
       propertyPath: m_RootOrder
@@ -1103,26 +1099,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1000083381, guid: fe78eb034c4617844ab9d8d3e6c1c604, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.016
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000083381, guid: fe78eb034c4617844ab9d8d3e6c1c604, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.115
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000083382, guid: fe78eb034c4617844ab9d8d3e6c1c604, type: 3}
-      propertyPath: m_Color.b
-      value: 0.9198971
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000083382, guid: fe78eb034c4617844ab9d8d3e6c1c604, type: 3}
-      propertyPath: m_Color.g
-      value: 0.99163955
-      objectReference: {fileID: 0}
-    - target: {fileID: 1000083382, guid: fe78eb034c4617844ab9d8d3e6c1c604, type: 3}
-      propertyPath: m_Color.r
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1123509709772329072, guid: fe78eb034c4617844ab9d8d3e6c1c604,
         type: 3}
       propertyPath: m_Name
@@ -1417,48 +1393,6 @@ PrefabInstance:
       propertyPath: Canvas
       value: 
       objectReference: {fileID: 860658851}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeLoader
-      value: 
-      objectReference: {fileID: 1370321058213341354, guid: 930503a2e5da10846b162ba5bd1b17e4,
-        type: 3}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FollowOffset.x
-      value: 0.26
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FollowOffset.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeLoaderPrefab
-      value: 
-      objectReference: {fileID: 1370321058213341364, guid: 930503a2e5da10846b162ba5bd1b17e4,
-        type: 3}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeColorLoader.a
-      value: 0.78039217
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeColorLoader.b
-      value: 0.7529412
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeColorLoader.g
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1815023462395637622, guid: 0d92fc74dd59f2742a43ad8894b688ba,
-        type: 3}
-      propertyPath: FreezeColorLoader.r
-      value: 0.0627451
-      objectReference: {fileID: 0}
     - target: {fileID: 1815023462395637625, guid: 0d92fc74dd59f2742a43ad8894b688ba,
         type: 3}
       propertyPath: m_RootOrder

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    public GameObject target;
     public GameObject player;
     public Animator anim;
     public FreezeInteract fInteract;
@@ -14,6 +13,7 @@ public class EnemyController : MonoBehaviour
     public float freezeTime = 2f;
     public bool freeze;
 
+    public float RadioAttack;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,10 +23,12 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        float distanceToPlayer = (player.transform.position - transform.position).sqrMagnitude;
         // Follow the player and sets the moving animation for the enemy
-        if (target != null && !freeze)
+        if (player != null && !freeze && distanceToPlayer < RadioAttack)
         {
-            transform.Translate((target.transform.position - transform.position) * speed * Time.deltaTime);
+            transform.Translate((player.transform.position - transform.position) * speed * Time.deltaTime);
         }
 
         // Sets the order in layer in function of the player's position
@@ -53,23 +55,10 @@ public class EnemyController : MonoBehaviour
         freeze = fInteract.Freeze;
         anim.SetBool("Freeze", freeze);
     }
-    
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == "Player")
-        {
-            target = collision.gameObject;
-            anim.SetBool("Moving", true);
-        }
-    }
 
-    private void OnTriggerExit2D(Collider2D collision)
+    private void OnDrawGizmos()
     {
-        // Finds the player and targets him
-        if (collision.gameObject.tag == "Player")
-        {
-            target = null;
-            anim.SetBool("Moving", false);
-        }
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, RadioAttack);
     }
 }
