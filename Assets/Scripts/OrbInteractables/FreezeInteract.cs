@@ -30,7 +30,7 @@ public class FreezeInteract : MonoBehaviour
             TimeIlluminated = 0;
         }
 
-        if(TimeIlluminated > 1.5)
+        if(TimeIlluminated > 1f)
         {
             Freeze = true;
         }
