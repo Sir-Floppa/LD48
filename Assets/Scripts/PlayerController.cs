@@ -46,12 +46,14 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown("mouse 0"))
         {
             harp.Play();
-            strings.Play();
+            StopAllCoroutines();
+            StartCoroutine(FadeSound(true));
         }
         if (Input.GetKeyUp("mouse 0"))
         {
-            strings.Stop();
-            strings.volume = 1f;
+            //strings.Stop();
+            StopAllCoroutines();
+            StartCoroutine(FadeSound(false));
         }
     }
 
@@ -79,6 +81,28 @@ public class PlayerController : MonoBehaviour
         else
         {
             GetComponent<SpriteRenderer>().flipX = false;
+        }
+    }
+
+    public float fadeTime = 0.3f;
+
+    IEnumerator FadeSound(bool Fadein)
+    {
+        if (Fadein)
+        {
+            strings.Play();
+        }
+        float actualVolume = strings.volume;
+        for(float t = 0; t < 1; t += Time.deltaTime / fadeTime)
+        {
+            float DesiredVolume = Fadein ? 1 : 0;
+            float NewVolume = Mathf.Lerp(actualVolume, DesiredVolume, t);
+            strings.volume = NewVolume;
+            yield return null;
+        }
+        if (!Fadein)
+        {
+            strings.Stop();
         }
     }
 }
