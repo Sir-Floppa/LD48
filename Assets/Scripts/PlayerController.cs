@@ -8,8 +8,8 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public AudioSource harp;
     public AudioSource strings;
+    public AudioSource hit;
     public Light selfLight;
-
     public float HorizontalInput;
     public float VerticalInput;
     public bool casting = false;
@@ -92,9 +92,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy" && !collision.gameObject.GetComponent<EnemyController>().freeze)
+        if (collision.gameObject.tag == "Enemy" && !collision.gameObject.GetComponent<EnemyController>().freeze && lives > 0)
         {
             lives--;
+            hit.Play();
             if (lives > 0)
             {
                 anim.SetTrigger("Hit");
