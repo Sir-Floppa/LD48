@@ -41,7 +41,6 @@ public class EnemyController : MonoBehaviour
 
         if (freeze)
         {
-            anim.enabled = false;
             timer += Time.deltaTime;
             if (timer >= freezeTime)
             {
@@ -50,13 +49,9 @@ public class EnemyController : MonoBehaviour
                 fInteract.Freeze = freeze;
             }
         }
-        else
-        {
-            anim.enabled = true;
-        }
 
         freeze = fInteract.Freeze;
-        
+        anim.SetBool("Freeze", freeze);
     }
     
     private void OnTriggerEnter2D(Collider2D collision)

@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
     public float HorizontalInput;
     public float VerticalInput;
     public bool casting = false;
+    public bool dead = false;
+    public int lives = 3;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +26,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         // Defines the direction of the player's movement
-        if (!casting)
+        if (!casting && !dead)
         {
             HorizontalInput = Input.GetAxisRaw("Horizontal");
             VerticalInput = Input.GetAxisRaw("Vertical");
@@ -78,13 +80,32 @@ public class PlayerController : MonoBehaviour
         {
             GetComponent<SpriteRenderer>().flipX = true;
         }
-        else
-        {
+        else if (HorizontalInput > 0)
+        { 
             GetComponent<SpriteRenderer>().flipX = false;
         }
     }
 
     public float fadeTime = 0.3f;
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            lives--;
+            if (lives > 0)
+            {
+                anim.SetTrigger("Hit");
+                GetComponent<Rigidbody2D>().AddForce(225 * new Vector2(transform.position.x - collision.gameObject.transform.position.x, transform.position.y - collision.gameObject.transform.position.y), ForceMode2D.Impulse);
+            }
+            else
+            {
+                anim.SetTrigger("Death");
+                dead = true;
+            }
+            
+        }
+    }
 
     IEnumerator FadeSound(bool Fadein)
     {
