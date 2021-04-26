@@ -60,7 +60,7 @@ public class OrbCast : MonoBehaviour
                     interactable.Illuminated = true;
                     newIlluminated.Add(interactable);
                 }
-                Debug.Log(GO.name);
+                //Debug.Log(GO.name);
             }
         }
 
