@@ -41,6 +41,7 @@ public class EnemyController : MonoBehaviour
 
         if (freeze)
         {
+            anim.enabled = false;
             timer += Time.deltaTime;
             if (timer >= freezeTime)
             {
@@ -48,6 +49,10 @@ public class EnemyController : MonoBehaviour
                 timer = 0;
                 fInteract.Freeze = freeze;
             }
+        }
+        else
+        {
+            anim.enabled = true;
         }
 
         freeze = fInteract.Freeze;
@@ -59,7 +64,6 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
-            anim.SetBool("Moving", true);
         }
     }
 
@@ -69,7 +73,6 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = null;
-            anim.SetBool("Moving", false);
         }
     }
 }
