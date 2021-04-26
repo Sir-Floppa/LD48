@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     public Animator anim;
     public AudioSource harp;
     public AudioSource strings;
+    public Light selfLight;
 
     public float HorizontalInput;
     public float VerticalInput;
@@ -19,7 +20,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        selfLight.enabled = false;
     }
 
     // Update is called once per frame
@@ -50,12 +51,14 @@ public class PlayerController : MonoBehaviour
             harp.Play();
             StopAllCoroutines();
             StartCoroutine(FadeSound(true));
+            selfLight.enabled = true;
         }
         if (Input.GetKeyUp("mouse 0"))
         {
             //strings.Stop();
             StopAllCoroutines();
             StartCoroutine(FadeSound(false));
+            selfLight.enabled = false;
         }
     }
 
