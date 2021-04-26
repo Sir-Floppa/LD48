@@ -8,6 +8,8 @@ public class FreezeInteract : MonoBehaviour
     OrbInteractable interactable;
 
     public float TimeIlluminated = 0;
+    public float FreezeTime = 0;
+    public bool Freeze = false;
 
 
     // Start is called before the first frame update
@@ -28,12 +30,25 @@ public class FreezeInteract : MonoBehaviour
             TimeIlluminated = 0;
         }
 
-        if(TimeIlluminated > 2)
+        if(TimeIlluminated > 1.5)
+        {
+            Freeze = true;
+        }
+
+        if (Freeze)
         {
             SpriteRenderer SR;
-            if(TryGetComponent<SpriteRenderer>(out SR))
+            if (TryGetComponent<SpriteRenderer>(out SR))
             {
                 SR.color = Color.cyan;
+            }
+        }
+        else
+        {
+            SpriteRenderer SR;
+            if (TryGetComponent<SpriteRenderer>(out SR))
+            {
+                SR.color = Color.white;
             }
         }
     }

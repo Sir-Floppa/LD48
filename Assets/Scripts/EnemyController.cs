@@ -7,6 +7,7 @@ public class EnemyController : MonoBehaviour
     public GameObject target;
     public GameObject player;
     public Animator anim;
+    public FreezeInteract fInteract;
 
     public float speed = 2.25f;
     public float timer = 0;
@@ -45,8 +46,11 @@ public class EnemyController : MonoBehaviour
             {
                 freeze = false;
                 timer = 0;
+                fInteract.Freeze = freeze;
             }
         }
+
+        freeze = fInteract.Freeze;
         
     }
     
@@ -55,12 +59,6 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
-        }
-
-        // Freeze with the light
-        if (collision.gameObject.tag == "Orb" && !freeze && timer < 3)
-        {
-            freeze = true;
         }
     }
 
