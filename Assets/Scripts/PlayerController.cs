@@ -5,7 +5,6 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public PlayerMovement movement;
-    public GameObject ground;
     public Animator anim;
     public AudioSource harp;
     public AudioSource strings;
@@ -65,7 +64,7 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         // w  a  l  k
-        if (!casting)
+        if (!casting && (HorizontalInput != 0 || VerticalInput != 0))
         {
             movement.Walk();
             anim.SetFloat("HorizontalInput", HorizontalInput);

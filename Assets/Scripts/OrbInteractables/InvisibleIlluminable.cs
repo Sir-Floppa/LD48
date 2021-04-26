@@ -21,17 +21,9 @@ public class InvisibleIlluminable : MonoBehaviour
 
     void unilluminated()
     {
-        
-
         illuminatedSetted = false;
         StopAllCoroutines();
-        Debug.Log(SR.color.a);
         StartCoroutine(FadeOutAlpha(0));
-
-        Debug.Log(SR.color.a);
-
-
-
     }
     // Start is called before the first frame update
     void Start()
