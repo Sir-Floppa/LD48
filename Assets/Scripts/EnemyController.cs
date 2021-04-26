@@ -64,6 +64,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = collision.gameObject;
+            anim.SetBool("Moving", true);
         }
     }
 
@@ -73,6 +74,7 @@ public class EnemyController : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             target = null;
+            anim.SetBool("Moving", false);
         }
     }
 }
