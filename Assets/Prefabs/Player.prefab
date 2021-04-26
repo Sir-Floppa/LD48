@@ -58,6 +58,7 @@ MonoBehaviour:
   HorizontalInput: 0
   VerticalInput: 0
   casting: 0
+  fadeTime: 0.5
 --- !u!114 &1123509709772329075
 MonoBehaviour:
   m_ObjectHideFlags: 0
