@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public bool casting = false;
     public bool dead = false;
     public int lives = 3;
+    public GameObject deadButton;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,11 @@ public class PlayerController : MonoBehaviour
             StopAllCoroutines();
             StartCoroutine(FadeSound(false));
             selfLight.enabled = false;
+        }
+
+        if (dead)
+        {
+            deadButton.SetActive(true);
         }
     }
 
