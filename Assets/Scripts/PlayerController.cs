@@ -98,8 +98,10 @@ public class PlayerController : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        
         if (collision.gameObject.tag == "Enemy" && !collision.gameObject.GetComponent<EnemyController>().freeze && lives > 0)
         {
+            Debug.Log("Collision");
             lives--;
             hit.Play();
             if (lives > 0)
